@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Googleアカウントの作り方 | 関ヶ谷自治会 ゆるキャラ作りイベント</title>
+<meta name="description" content="ゆるキャラ作りイベントに参加するためのGoogleアカウント作成ガイド。初心者の方向けにやさしく解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #ff8a3d;
+    --primary-dark: #e26a1a;
+    --bg: #fff8f0;
+    --text: #2a2a2a;
+    --accent: #4ec3c7;
+    --warn: #f5b800;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    font-weight: 500;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-weight: 800; }
+  .hero {
+    background: linear-gradient(135deg, #ffb877 0%, #ff8a3d 100%);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+    margin-bottom: 10px;
+  }
+  .hero .sub {
+    font-size: clamp(0.95rem, 2.3vw, 1.15rem);
+    opacity: 0.95;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 30px 20px; }
+  .intro-card {
+    background: #fffbe6;
+    border-left: 6px solid var(--warn);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+  }
+  .intro-card p { margin-bottom: 8px; }
+  .intro-card p:last-child { margin-bottom: 0; }
+  .step-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 28px 26px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .step-card h2 {
+    color: var(--primary-dark);
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .step-num {
+    background: var(--primary);
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+  }
+  .step-card p { margin-bottom: 12px; }
+  .step-card ul { padding-left: 1.5em; margin-bottom: 12px; }
+  .step-card li { margin-bottom: 8px; }
+  .tip {
+    background: #eef9fa;
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 14px;
+    font-size: 0.95rem;
+  }
+  .tip strong { color: #1e8a8f; }
+  .warn {
+    background: #fff3e0;
+    border-left: 4px solid var(--warn);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-top: 14px;
+    font-size: 0.95rem;
+  }
+  .warn strong { color: #c98800; }
+  .screen-hint {
+    background: #f7f7f7;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  .screen-hint::before { content: "📱 "; }
+  .help-card {
+    background: linear-gradient(135deg, #fff4ec 0%, #ffe4d0 100%);
+    border: 3px solid var(--primary);
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin: 30px 0;
+  }
+  .help-card h2 {
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+  }
+  .help-card a {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(255,138,61,0.3);
+  }
+  .toc {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow);
+  }
+  .toc h3 {
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+  }
+  .toc ol { padding-left: 1.4em; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--text); text-decoration: none; }
+  .toc a:hover { color: var(--primary-dark); text-decoration: underline; }
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #888;
+    font-size: 0.85rem;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  .back-link::before { content: "← "; }
+  .big-emoji { font-size: 2rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Googleアカウントの作り方</h1>
+  <p class="sub">ゆるキャラ作りイベントに参加するための準備ガイド</p>
+</header>
+
+<main class="container">
+
+  <a href="index.html" class="back-link">イベント案内ページに戻る</a>
+
+  <div class="intro-card">
+    <p><span class="big-emoji">😊</span></p>
+    <p><strong>このページは、Googleアカウントを持っていない方・作り方が分からない方のためのご案内です。</strong></p>
+    <p>すでにGoogleアカウントをお持ちの方(YouTubeやGmailを使ったことがある方など)は、このページを読む必要はありません。</p>
+    <p>難しいことはありません。順番にゆっくり進めれば、<strong>10〜15分</strong>でできますので安心してください🌱</p>
+  </div>
+
+  <div class="toc">
+    <h3>📖 もくじ</h3>
+    <ol>
+      <li><a href="#step1">そもそもGoogleアカウントってなに?</a></li>
+      <li><a href="#step2">準備するもの</a></li>
+      <li><a href="#step3">アカウントを作る画面を開く</a></li>
+      <li><a href="#step4">名前と生年月日を入力する</a></li>
+      <li><a href="#step5">メールアドレスとパスワードを決める</a></li>
+      <li><a href="#step6">電話番号で確認する</a></li>
+      <li><a href="#step7">完成!</a></li>
+      <li><a href="#step8">イベント当日に忘れず持ってくるもの</a></li>
+    </ol>
+  </div>
+
+  <section class="step-card" id="step1">
+    <h2><span class="step-num">?</span>そもそもGoogleアカウントってなに?</h2>
+    <p>Googleアカウントは、Google(グーグル)がやっているいろんなサービスを使うための「会員証」のようなものです。</p>
+    <p>たとえば、こういうサービスはぜんぶGoogleアカウントで使えます:</p>
+    <ul>
+      <li>Gmail(ジーメール、メール)</li>
+      <li>YouTube(ユーチューブ、動画)</li>
+      <li>Google マップ(地図)</li>
+      <li>そして今回使う <strong>Google Gemini(ジェミニ)= 画像を作るAI</strong></li>
+    </ul>
+    <p>1つ作っておけば、ぜんぶ無料で使えます。</p>
+    <div class="tip"><strong>💡 ポイント:</strong> アカウントを作ると、自動的に「〇〇@gmail.com」というメールアドレスももらえます。これがあなたのGoogleアカウントの「名前」になります。</div>
+  </section>
+
+  <section class="step-card" id="step2">
+    <h2><span class="step-num">1</span>準備するもの</h2>
+    <ul>
+      <li>📱 スマートフォン または 💻 パソコン</li>
+      <li>📞 電話番号(スマホでもおうちの電話でもOK)</li>
+      <li>✏️ メモするもの(紙とペン、またはスマホのメモアプリ)</li>
+    </ul>
+    <div class="warn"><strong>⚠️ 大事なこと:</strong> これから決める「メールアドレス」と「パスワード」は、<strong>必ずメモしてください</strong>。忘れるとログインできなくなってしまいます。</div>
+  </section>
+
+  <section class="step-card" id="step3">
+    <h2><span class="step-num">2</span>アカウントを作る画面を開く</h2>
+    <p>下のリンクをタップ(クリック)してください。</p>
+    <p style="text-align:center; margin: 16px 0;">
+      <a href="https://accounts.google.com/signup" target="_blank" rel="noopener" style="display:inline-block; background:var(--accent); color:white; padding:14px 28px; border-radius:30px; text-decoration:none; font-weight:bold;">Googleアカウント作成ページを開く</a>
+    </p>
+  </section>
+
+  <section class="step-card" id="step4">
+    <h2><span class="step-num">3</span>名前と生年月日を入力する</h2>
+    <p>あなたの名前を入力します。</p>
+    <ul>
+      <li><strong>姓(せい)</strong>:たとえば「山田」</li>
+      <li><strong>名(めい)</strong>:たとえば「花子」</li>
+    </ul>
+    <p>入力できたら「次へ」をタップします。</p>
+    <p>続けて、<strong>生年月日</strong>と<strong>性別</strong>を入力します。</p>
+    <div class="tip"><strong>💡 ポイント:</strong> 生年月日は正直に入れてください。あとでパスワードを忘れたときの確認にも使われます。</div>
+  </section>
+
+  <section class="step-card" id="step5">
+    <h2><span class="step-num">4</span>メールアドレスとパスワードを決める</h2>
+    <p>新しいメールアドレスを決めます。</p>
+    <p>たとえば「<strong>yamada.hanako1234@gmail.com</strong>」のように、自分の名前+数字の組み合わせがおすすめです。</p>
+    <div class="warn"><strong>⚠️ 注意:</strong> 同じアドレスを誰かが使っていると作れません。その場合は数字を変えたり、別の名前にしたりして試してください。</div>
+    <p>次に、<strong>パスワード</strong>を決めます。</p>
+    <ul>
+      <li>8文字以上</li>
+      <li>英語の大文字・小文字・数字を混ぜる</li>
+      <li>例:「<strong>Hanako2026!</strong>」のような組み合わせ</li>
+    </ul>
+    <div class="warn"><strong>⚠️ 必ずメモしてください!</strong><br>「メールアドレス」と「パスワード」は、忘れるとログインできなくなります。紙にメモするか、スマホの「メモ帳」アプリに保存しておきましょう。</div>
+  </section>
+
+  <section class="step-card" id="step6">
+    <h2><span class="step-num">5</span>電話番号で確認する</h2>
+    <p>「電話番号を入力してください」と表示されます。</p>
+    <p>あなたの電話番号(スマホ・固定電話どちらでもOK)を入力すると、その電話に<strong>SMS(ショートメッセージ)</strong>または<strong>音声通話</strong>で6桁の数字が届きます。</p>
+    <p>その6桁の数字を画面に入力すれば、確認完了です。</p>
+    <div class="tip"><strong>💡 困ったときは:</strong> SMSが届かないときは「代わりに音声通話で受け取る」を選ぶと、電話がかかってきて自動音声で番号を読み上げてくれます。</div>
+  </section>
+
+  <section class="step-card" id="step7">
+    <h2><span class="step-num">6</span>完成!</h2>
+    <p>「ようこそ」と表示されたら、Googleアカウントの完成です🎉</p>
+    <p>これで、Gmail・YouTube・Geminiなど、Googleのいろんなサービスがすぐに使えるようになりました。</p>
+    <div class="tip"><strong>💡 確認のコツ:</strong> 一度ログアウトして、もう一度ログインしてみると安心です。メールアドレスとパスワードを正しくメモできているか、自分でテストしてみましょう。</div>
+  </section>
+
+  <section class="step-card" id="step8">
+    <h2><span class="step-num">★</span>イベント当日に忘れず持ってくるもの</h2>
+    <p>6月14日(日)、自治会館に来るときに忘れず持ってきてください。</p>
+    <ul>
+      <li>📱 スマホ または 💻 ノートパソコン</li>
+      <li>📝 <strong>Googleアカウントのメールアドレス</strong>(メモした紙やスマホ画面)</li>
+      <li>🔑 <strong>Googleアカウントのパスワード</strong>(同じくメモした紙やスマホ画面)</li>
+    </ul>
+    <div class="warn"><strong>⚠️ 一番大事!</strong> パスワードを忘れていると、当日AIにログインできません。前日の夜にもう一度確認しておきましょう。</div>
+  </section>
+
+  <div class="help-card">
+    <h2>💬 困ったときは</h2>
+    <p>「設定がうまくできない」など、どんなことでも気軽にご連絡ください。<br>DX委員会のメンバーがサポートします。</p>
+    <a href="mailto:sekigaya.dx@gmail.com">📧 メールで相談する</a>
+    <p style="margin-top:14px; font-size:0.9rem; color:#666;">sekigaya.dx@gmail.com</p>
+  </div>
+
+  <a href="index.html" class="back-link">イベント案内ページに戻る</a>
+
+</main>
+
+<footer>
+  © 2026 関ヶ谷自治会 DX委員会
+</footer>
+
+</body>
+</html>

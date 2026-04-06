@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生成AIで作る！関ヶ谷自治会ゆるキャライベント | 2026年6月14日開催</title>
+<meta name="description" content="生成AIを使って関ヶ谷自治会の公式ゆるキャラを作るイベント。2026年6月14日（日）13:00〜17:00、関ヶ谷自治会館にて。参加無料・AI初心者歓迎。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #ff8a3d;
+    --primary-dark: #e26a1a;
+    --bg: #fff8f0;
+    --text: #333;
+    --accent: #4ec3c7;
+    --ai: #7c5cff;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN W4", "Meiryo", "メイリオ", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, .hype-punch, .cta a {
+    font-weight: 800;
+  }
+  .hero {
+    background: linear-gradient(135deg, #7c5cff 0%, #ff8a3d 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .hero .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    backdrop-filter: blur(4px);
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .hero .sub {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.95;
+  }
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  h2 {
+    color: var(--primary-dark);
+    border-left: 6px solid var(--primary);
+    padding-left: 14px;
+    margin-bottom: 16px;
+    font-size: 1.4rem;
+  }
+  .ai-card {
+    background: linear-gradient(135deg, #f5f1ff 0%, #fff4ec 100%);
+    border: 2px dashed var(--ai);
+  }
+  .ai-card h2 {
+    color: var(--ai);
+    border-left-color: var(--ai);
+  }
+  .info-table { width: 100%; border-collapse: collapse; }
+  .info-table th, .info-table td {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px dashed #eadbc8;
+  }
+  .info-table th { color: var(--primary-dark); width: 30%; white-space: nowrap; }
+  .cta { text-align: center; margin: 30px 0; }
+  .cta a {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.15rem;
+    box-shadow: 0 6px 16px rgba(255,138,61,0.4);
+    transition: transform 0.2s;
+  }
+  .cta a:hover { transform: translateY(-3px); }
+  ul { padding-left: 1.4em; }
+  li { margin-bottom: 6px; }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .step-num {
+    background: var(--accent);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  footer { text-align: center; padding: 30px 20px; color: #888; font-size: 0.9rem; }
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin: 4px 4px 4px 0;
+  }
+  .badge-ai { background: var(--ai); }
+  .hype {
+    background: linear-gradient(135deg, #fff4ec 0%, #ffe4d0 100%);
+    border: 3px solid var(--primary);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hype::before {
+    content: "🎨";
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.08;
+    top: -20px;
+    right: -10px;
+    transform: rotate(15deg);
+  }
+  .hype h2 {
+    border: none;
+    padding: 0;
+    color: var(--primary-dark);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: 1.4;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hype .hype-lead {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    color: #555;
+    line-height: 1.8;
+    position: relative;
+  }
+  .hype .hype-punch {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 24px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    position: relative;
+  }
+  .prompt-example {
+    background: #fff;
+    border-left: 4px solid var(--ai);
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-family: "Courier New", monospace;
+    font-size: 0.92rem;
+    border-radius: 4px;
+    color: #555;
+  }
+  .sample-wrap {
+    margin: 20px 0 8px;
+    text-align: center;
+  }
+  .sample-wrap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(124,92,255,0.18);
+    border: 3px solid #fff;
+  }
+  .sample-caption {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    color: #777;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="tag">✨ 生成AI × 地域コミュニティ ✨</span>
+  <h1>関ヶ谷自治会の<br>公式キャラクターを作るのは、<br>君だ！🔥</h1>
+  <p class="sub">2026年6月14日（日）13:00〜17:00 ／ 関ヶ谷自治会館</p>
+</header>
+
+<main class="container">
+
+  <section class="hype">
+    <h2>世界にひとつだけの「関ヶ谷の顔」を、<br>生成AIで作ろう！</h2>
+    <p class="hype-lead">
+      絵が得意じゃなくても大丈夫。<br>
+      小学生でも、大人でも、おじいちゃんおばあちゃんでも。<br>
+      <strong>あなたが作ったキャラが、関ヶ谷自治会の「公式キャラクター」になるかもしれません。</strong><br>
+      回覧板に、お知らせに、イベントに——。<br>
+      これから何年も、このまちのシンボルとして活躍することになるキャラクター。<br>
+      その「生みの親」に、あなたがなるかもしれないんです。
+    </p>
+    <div class="hype-punch">🏆 さあ、関ヶ谷の歴史に名前を刻もう！</div>
+  </section>
+
+  <section class="card ai-card">
+    <h2>🤖 このイベントは「生成AI」を使います</h2>
+    <p>このイベントの一番のポイントは、<strong>画像生成AIを使ってキャラクターを作る</strong>ことです。</p>
+    <p>「絵が描けないから無理…」そんな心配はいりません！AIに「<em>こんなキャラがほしい</em>」と言葉で伝えるだけで、誰でもかわいいキャラクターを作ることができます。</p>
+    <div class="prompt-example">
+      例:「柴犬の関ヶ谷自治会のゆるキャラ。頭に緑の葉っぱ、緑のバンダナ。やさしい雰囲気で」
+    </div>
+
+    <div class="sample-wrap">
+      <img src="sample.png" alt="生成AIで作ったゆるキャラのサンプル「セキわん」">
+      <div class="sample-caption">↑ 生成AIで作るとこんなキャラができます！(サンプル：「セキわん」)<br>当日は、こんな風にいろんなポーズや活躍シーンも作れます🐕</div>
+    </div>
+
+    <p>当日は<strong>AIの使い方をスタッフがサポート</strong>しますので、生成AIを触ったことがない方・お子さんも、安心してご参加いただけます。</p>
+    <div style="margin-top:14px;">
+      <span class="badge badge-ai">画像生成AI</span>
+      <span class="badge badge-ai">AI初心者歓迎</span>
+      <span class="badge badge-ai">サポート付き</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>イベントについて</h2>
+    <p>関ヶ谷自治会では、<strong>生成AIを活用して自治会の公式ゆるキャラを作る</strong>イベントを開催します！</p>
+    <p>子どもから大人まで、誰でも最先端のAIツールに触れながら、関ヶ谷らしいキャラクターを作っていきます。完成した作品は後日、自治会のみなさんによる<strong>投票</strong>でグランプリを決定し、選ばれた作品が<strong>関ヶ谷自治会の公式キャラクター</strong>として採用されます✨</p>
+    <p>ものづくりの楽しさと、これからの時代を生きる「AIとの付き合い方」を、地域のみんなで一緒に体験しましょう。</p>
+    <div style="margin-top:14px;">
+      <span class="badge">参加無料</span>
+      <span class="badge">子どもOK</span>
+      <span class="badge">個人・グループ参加OK</span>
+      <span class="badge">公式キャラに採用</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>開催概要</h2>
+    <table class="info-table">
+      <tr><th>日時</th><td>2026年6月14日（日）13:00〜17:00</td></tr>
+      <tr><th>会場</th><td>関ヶ谷自治会館</td></tr>
+      <tr><th>参加費</th><td>無料</td></tr>
+      <tr><th>対象</th><td>どなたでも（小学校低学年以下は保護者同伴）</td></tr>
+      <tr><th>定員</th><td>20名程度（先着順）</td></tr>
+      <tr><th>参加形式</th><td>個人またはグループ（家族・友達同士OK）</td></tr>
+      <tr><th>持ち物</th><td>ノートPC、タブレット、またはスマートフォン<br>※インターネットに接続できる端末<br>※<strong>Googleアカウントのログイン情報（ID・パスワード）を必ずご持参ください</strong></td></tr>
+      <tr><th>使用ツール</th><td>Google Gemini（無料枠）を使用予定<br>※Googleアカウントでのログインが必要です</td></tr>
+      <tr><th>主催</th><td>関ヶ谷自治会 DX委員会</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>当日の流れ</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div><strong>13:00 受付・はじまりの会</strong><br>自己紹介と、生成AIの簡単な使い方レクチャー</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div><strong>13:30 AIでキャラクター制作タイム</strong><br>関ヶ谷の特徴を考えながら、AIに指示（プロンプト）を入れてキャラを生成。スタッフがサポートします</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div><strong>16:00 みんなで発表会</strong><br>完成した作品を、生まれた経緯と一緒にシェア！</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div><strong>17:00 終了</strong><br>後日、全体投票でグランプリを決定します🏆</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>グランプリの決め方</h2>
+    <p>イベントで生まれた作品は後日、関ヶ谷自治会のみなさんによる<strong>投票イベント</strong>を行います。最も票を集めた作品がグランプリとなり、関ヶ谷自治会の<strong>公式キャラクター</strong>として活躍することになります！</p>
+    <p>投票方法・期間については、決まり次第お知らせします。</p>
+  </section>
+
+  <section class="hype">
+    <h2>キミのアイデアが、<br>関ヶ谷の未来になる。</h2>
+    <p class="hype-lead">
+      「こんなキャラがいたらかわいいな」<br>
+      そのひらめきを、AIがカタチにしてくれます。<br>
+      難しい技術はいりません。必要なのは、<strong>関ヶ谷が好きっていう気持ち</strong>だけ。<br><br>
+      6月14日、自治会館で待ってます。<br>
+      お友だちを誘って、ご家族で、ぜひ遊びに来てください！
+    </p>
+    <div class="hype-punch">🎨 参加無料・手ぶらOK(端末だけご持参)</div>
+  </section>
+
+  <div class="cta">
+    <a href="https://forms.gle/U5o5mDud9awQ5csf8" id="form-link" target="_blank" rel="noopener">📝 今すぐ参加申込フォームへ！</a>
+    <p style="margin-top:10px; font-size:0.9rem; color:#888;">※Googleフォームが開きます／定員になり次第締切</p>
+  </div>
+
+  <section class="card">
+    <h2>⚠️ ご参加前に必ずご確認ください</h2>
+    <p>当日は <strong>Google Gemini（無料枠）</strong> を使ってキャラクターを生成する予定です。Geminiのご利用には<strong>Googleアカウントでのログインが必要</strong>です。</p>
+    <ul>
+      <li>すでにGoogleアカウントをお持ちの方 → <strong>ID（メールアドレス）とパスワードを必ずご持参ください</strong></li>
+      <li>お持ちでない・作り方が分からない方 → <a href="google-account.html"><strong>こちらの案内ページ</strong></a>をご覧ください📖（10〜15分でできます）</li>
+      <li>お子さんが参加される場合は、保護者の方のアカウントをご利用ください</li>
+    </ul>
+    <p>※ログインできないと当日AIが使えなくなってしまうので、ご確認をお願いします🙏</p>
+  </section>
+
+  <section class="card">
+    <h2>❓ よくある質問</h2>
+    <p>参加・持ち物・生成AI・グランプリなど、よくあるご質問をまとめました。</p>
+    <p style="text-align:center; margin-top:14px;">
+      <a href="faq.html" style="display:inline-block; background:var(--accent); color:white; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:bold;">よくある質問（Q&amp;A）を見る</a>
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>お問い合わせ</h2>
+    <p><strong>関ヶ谷自治会 DX委員会</strong></p>
+    <p>📧 メール：<a href="mailto:sekigaya.dx@gmail.com">sekigaya.dx@gmail.com</a></p>
+    <p>ご質問・ご相談など、お気軽にメールでご連絡ください。<br>担当者から順次返信いたします。</p>
+    <p style="font-size:0.85rem; color:#999; margin-top:8px;">※DX委員会専用のメールアドレスです。お問い合わせは5人のメンバーで対応します。</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 関ヶ谷自治会 DX委員会
+</footer>
+
+</body>
+</html>
