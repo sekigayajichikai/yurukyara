@@ -70,6 +70,10 @@
     margin-bottom: 16px;
     font-size: 1.4rem;
   }
+  .event-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
   .ai-card {
     background: linear-gradient(135deg, #f5f1ff 0%, #fff4ec 100%);
     border: 2px dashed var(--ai);
@@ -202,6 +206,10 @@
     color: #777;
     font-style: italic;
   }
+  @media (max-width: 600px) {
+    .hero h1 br { display: none; }
+    .hero { padding: 40px 20px; }
+  }
 </style>
 </head>
 <body>
@@ -209,7 +217,12 @@
 <header class="hero">
   <span class="tag">✨ 生成AI × 地域コミュニティ ✨</span>
   <h1>関ヶ谷自治会の<br>公式キャラクターを作るのは、<br>君だ！🔥</h1>
+  <h2 class="event-title">関ヶ谷自治会　ゆるキャラ作りイベント</h2>
   <p class="sub">2026年6月14日（日）13:00〜17:00 ／ 関ヶ谷自治会館</p>
+  <div class="cta" style="margin:24px 0 0;">
+    <a href="https://forms.gle/U5o5mDud9awQ5csf8" target="_blank" rel="noopener" style="background:white; color:var(--primary-dark); box-shadow:0 6px 16px rgba(0,0,0,0.2);">📝 参加申込はこちら</a>
+    <p style="margin-top:8px; font-size:0.85rem; opacity:0.85;">参加無料・定員20名（先着順）</p>
+  </div>
 </header>
 
 <main class="container">
@@ -218,29 +231,25 @@
     <h2>世界にひとつだけの「関ヶ谷の顔」を、<br>生成AIで作ろう！</h2>
     <p class="hype-lead">
       絵が得意じゃなくても大丈夫。<br>
-      小学生でも、大人でも、おじいちゃんおばあちゃんでも。<br>
-      <strong>あなたが作ったキャラが、関ヶ谷自治会の「公式キャラクター」になるかもしれません。</strong><br>
-      回覧板に、お知らせに、イベントに——。<br>
-      これから何年も、このまちのシンボルとして活躍することになるキャラクター。<br>
-      その「生みの親」に、あなたがなるかもしれないんです。
+      <strong>あなたが作ったキャラが、自治会の「公式キャラクター」になるかも！</strong><br>
+      回覧板やお知らせに登場する、まちのシンボルを生み出そう。
     </p>
     <div class="hype-punch">🏆 さあ、関ヶ谷の歴史に名前を刻もう！</div>
   </section>
 
   <section class="card ai-card">
-    <h2>🤖 このイベントは「生成AI」を使います</h2>
-    <p>このイベントの一番のポイントは、<strong>画像生成AIを使ってキャラクターを作る</strong>ことです。</p>
-    <p>「絵が描けないから無理…」そんな心配はいりません！AIに「<em>こんなキャラがほしい</em>」と言葉で伝えるだけで、誰でもかわいいキャラクターを作ることができます。</p>
+    <h2>🤖 生成AIでキャラクターを作ろう</h2>
+    <p>AIに「<em>こんなキャラがほしい</em>」と言葉で伝えるだけ。絵が描けなくてもOKです！</p>
     <div class="prompt-example">
       例:「柴犬の関ヶ谷自治会のゆるキャラ。頭に緑の葉っぱ、緑のバンダナ。やさしい雰囲気で」
     </div>
 
     <div class="sample-wrap">
       <img src="sample.png" alt="生成AIで作ったゆるキャラのサンプル「セキわん」">
-      <div class="sample-caption">↑ 生成AIで作るとこんなキャラができます！(サンプル：「セキわん」)<br>当日は、こんな風にいろんなポーズや活躍シーンも作れます🐕</div>
+      <div class="sample-caption">↑ こんなキャラができます！(サンプル：「セキわん」)</div>
     </div>
 
-    <p>当日は<strong>AIの使い方をスタッフがサポート</strong>しますので、生成AIを触ったことがない方・お子さんも、安心してご参加いただけます。</p>
+    <p>当日は<strong>スタッフがサポート</strong>するので、AI初心者も安心です。</p>
     <div style="margin-top:14px;">
       <span class="badge badge-ai">画像生成AI</span>
       <span class="badge badge-ai">AI初心者歓迎</span>
@@ -250,14 +259,11 @@
 
   <section class="card">
     <h2>イベントについて</h2>
-    <p>関ヶ谷自治会では、<strong>生成AIを活用して自治会の公式ゆるキャラを作る</strong>イベントを開催します！</p>
-    <p>子どもから大人まで、誰でも最先端のAIツールに触れながら、関ヶ谷らしいキャラクターを作っていきます。完成した作品は後日、自治会のみなさんによる<strong>投票</strong>でグランプリを決定し、選ばれた作品が<strong>関ヶ谷自治会の公式キャラクター</strong>として採用されます✨</p>
-    <p>ものづくりの楽しさと、これからの時代を生きる「AIとの付き合い方」を、地域のみんなで一緒に体験しましょう。</p>
+    <p>生成AIで関ヶ谷らしいキャラクターを作り、後日の<strong>投票</strong>でグランプリを決定。選ばれた作品が<strong>自治会の公式キャラクター</strong>に採用されるかも✨</p>
     <div style="margin-top:14px;">
       <span class="badge">参加無料</span>
       <span class="badge">子どもOK</span>
       <span class="badge">個人・グループ参加OK</span>
-      <span class="badge">公式キャラに採用</span>
     </div>
   </section>
 
@@ -298,18 +304,14 @@
 
   <section class="card">
     <h2>グランプリの決め方</h2>
-    <p>イベントで生まれた作品は後日、関ヶ谷自治会のみなさんによる<strong>投票イベント</strong>を行います。最も票を集めた作品がグランプリとなり、関ヶ谷自治会の<strong>公式キャラクター</strong>として活躍することになります！</p>
-    <p>投票方法・期間については、決まり次第お知らせします。</p>
+    <p>後日、自治会のみなさんによる<strong>投票</strong>でグランプリを決定。投票方法・期間は決まり次第お知らせします。</p>
   </section>
 
   <section class="hype">
     <h2>キミのアイデアが、<br>関ヶ谷の未来になる。</h2>
     <p class="hype-lead">
-      「こんなキャラがいたらかわいいな」<br>
-      そのひらめきを、AIがカタチにしてくれます。<br>
-      難しい技術はいりません。必要なのは、<strong>関ヶ谷が好きっていう気持ち</strong>だけ。<br><br>
-      6月14日、自治会館で待ってます。<br>
-      お友だちを誘って、ご家族で、ぜひ遊びに来てください！
+      ひらめきをAIがカタチに。必要なのは、<strong>関ヶ谷が好きっていう気持ち</strong>だけ。<br>
+      6月14日、お友だちやご家族と、ぜひ遊びに来てください！
     </p>
   </section>
 
@@ -341,7 +343,7 @@
     <h2>お問い合わせ</h2>
     <p><strong>関ヶ谷自治会 DX委員会</strong></p>
     <p>📧 メール：<a href="mailto:sekigaya.dx@gmail.com">sekigaya.dx@gmail.com</a></p>
-    <p>ご質問・ご相談・Googleアカウントに関するご不安など、お気軽にメールでご連絡ください。</p>
+    <p>ご質問・ご相談など、お気軽にメールでご連絡ください。</p>
     <p style="font-size:0.85rem; color:#999; margin-top:8px;">※DX委員会専用のメールアドレスです。</p>
   </section>
 
